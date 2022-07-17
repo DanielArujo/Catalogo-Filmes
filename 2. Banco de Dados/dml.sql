@@ -18,10 +18,17 @@ SELECT 	id_usuario		id,
 
 -- caso de uso 2: cadastrar novo filme
 
-INSERT INTO tb_filme (id_usuario, nm_filme, ds_sinopse, vl_avaliacao, dt_lancamento, bt_disponivel, img_filme)
-	 VALUES (1, 'Piratas do Caribe 5', 'Esse nao é tao bom', 7.6, '2010-08-15', true, '/storage/images/pc.jpg');
+INSERT INTO tb_filme (id_usuario, nm_filme, ds_sinopse, vl_avaliacao, dt_lancamento, bt_disponivel)
+	 VALUES (1, 'Piratas do Caribe 5', 'Esse nao é tao bom', 7.6, '2010-08-15', true);
      
      
+-- caso de uso 2.1: alterar imagem
+
+UPDATE 	tb_filme
+   SET 	img_filme		= '/storage/images./pc1.jpg'
+ WHERE	id_filme		= 2;
+
+
 -- caso de uso 3: alterar filme
 
 UPDATE 	tb_filme
@@ -29,8 +36,7 @@ UPDATE 	tb_filme
 		ds_sinopse		= 'Esse é o melhor',
         vl_avaliacao	= 9.7,
         dt_lancamento	= '2003-08-29',
-        bt_disponivel	= true,
-        img_filme		= '/storage/images./pc1.jpg'
+        bt_disponivel	= true
  WHERE	id_filme		= 2;
  
 

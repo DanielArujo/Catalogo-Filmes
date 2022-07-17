@@ -1,0 +1,124 @@
+    ESTUDO ENDPOINTS
+
+Casos de Uso
+
+1. /POST            /usuario/login
+
+request
+{
+    "email": "",
+    "senha": ""
+}
+
+response
+{
+    "id_usuario": 0,
+    "email": "",
+    "usuario":
+}
+
+/////////////////////
+
+2. /POST            /filme
+
+request{
+    "usuario": 0,
+    "filme": "",
+    "sinopse": "",
+    "avaliacao": "",
+    "lancamento": "",
+    "disponivel": ""
+}
+
+response{
+    "id_filme": 0
+}
+
+//////////////////////////////////
+
+2.1. /PUT             /filme/:id/imagem
+
+request{
+    "imagem": ""
+}
+
+response{
+    OK!
+}
+
+///////////////////////////////
+
+3. /PUT             /filme/:id
+
+request{
+    "usuario": "",
+    "filme": "",
+    "sinopse: "",
+    "avaliacao": "",
+    "lancamento": "",
+    "disponivel": ""
+}
+
+response{
+    OK!
+}
+
+/////////////////////////////
+
+4. /DELETE              /filme/:id
+
+request{
+    id
+}
+
+response{
+    OK!
+}
+
+/////////////////////////////////
+
+5. /GET                 /filme
+
+request{
+
+}
+
+response
+[
+    {
+        "id": "",
+        "nome": "",
+        "avaliacao": "",
+        "lancamento": "",
+        "disponivel: ""
+    }
+]
+
+/////////////////////////////////////
+
+6.  /GET            /filme/busca?nome
+
+response
+[
+    {
+        "id": "",
+        "nome": "",
+        "avaliacao": "",
+        "lancamento": "",
+        "disponivel: ""
+    }
+]
+
+7.  /GET               /filme/:id
+
+response
+
+{
+    "id": "",
+    "nome": "",
+    "sinopse": "",
+    "avaliacao": "",
+    "lancamento": "",
+    "disponivel: "",
+    "imagem": ""
+}
