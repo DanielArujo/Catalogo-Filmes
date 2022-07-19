@@ -14,3 +14,16 @@ export async function cadastrarFilme (filme){
 
     return filme;
 }
+
+
+export async function cadastrarImagem (imagem, id){
+    const comando = 
+    `   UPDATE 	    tb_filme
+        SET 	    img_filme		= ?
+        WHERE	    id_filme		= ?
+    `;
+
+    const [response] = await con.query(comando, [imagem, id])
+    
+    return response.affectedRows;
+}
