@@ -49,7 +49,7 @@ DELETE FROM tb_filme
 -- caso de uso 5: consultar todos os filme
 
 SELECT	id_filme		id,
-		nm_filme		nome,
+		    nm_filme		nome,
         vl_avaliacao	avaliacao,
         dt_lancamento	lancamento,
         bt_disponivel 	disponivel
@@ -59,7 +59,7 @@ SELECT	id_filme		id,
  -- caso de uso 6: consultar filme por nome
 
 SELECT	id_filme		id,
-		nm_filme		nome,
+		    nm_filme		nome,
         vl_avaliacao	avaliacao,
         dt_lancamento	lancamento,
         bt_disponivel 	disponivel
@@ -70,7 +70,7 @@ WHERE	nm_filme	LIKE '%p%';
  -- caso de uso 7: consultar filme por id
 
 SELECT	id_filme		id,
-		nm_filme		nome,
+		    nm_filme		nome,
         ds_sinopse		sinopse,
         vl_avaliacao	avaliacao,
         dt_lancamento	lancamento,
