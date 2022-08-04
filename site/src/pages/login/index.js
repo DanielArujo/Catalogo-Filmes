@@ -1,17 +1,31 @@
 import { useState } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 import './index.scss'
 
 export default function Index() {
 
-    [email, setEmail] = useState('');
-    [senha, setSenha] = useState('');
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+    const [erro, setErro] = useState('');
+
+    const navigation = useNavigate();
 
 
-    function entrarLogin(){
-        
+    async function entrarLogin(){
+        try {
+                await axios.post( 'http://localhost:5000/usuario/login', { 
+                    email: email, 
+                    senha: senha 
+            });
+            
+            navigation('/admin')
+            
+        } catch (err) {
+            setErro( err.response.data.erro )
+        }
     }
-
+            
 
     return (
         <main className='page page-login'>
@@ -35,7 +49,7 @@ export default function Index() {
                         <button className='btn-black' onClick={ entrarLogin }>ENTRAR</button> 
                     </div>
                     <div className='form-entrar invalido'>
-                        Credenciais inválidas
+                        { erro }
                     </div>
                 </div>
 
